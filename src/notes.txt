@@ -1,0 +1,6 @@
+- npm run dev
+- can use virtual DOM instead of template
+- write value to html use: <tag>{{ variable }}</tag>
+- write a html use: v-html directive (can cause XSS vulnerabilities)
+- bind an attribute use: v-bind directive. eg v-bind:id="someId" or :id="someId"
+- bind many attribute use: v-bind with value is an object
