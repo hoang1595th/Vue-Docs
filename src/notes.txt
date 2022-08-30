@@ -1,6 +1,30 @@
+# ---------------------------------------------------------------------------- #
+#                                Getting Started                               #
+# ---------------------------------------------------------------------------- #
+# -------------------------------- Quick Start ------------------------------- #
 - npm run dev
+- createApp from object or .vue file include: script setup, template, style
+- to mount app to the root application id: createApp(MyComponent).mount('#app')
+
+
+# ---------------------------------------------------------------------------- #
+#                                  Essentials                                  #
+# ---------------------------------------------------------------------------- #
+# -------------------------- Creating an Application ------------------------- #
+- app.config.errorHandler = (err) => {
+  /* handle error */
+}
+- can multiple application instances
+
+# ------------------------------ Template Syntax ----------------------------- #
 - can use virtual DOM instead of template
 - write value to html use: <tag>{{ variable }}</tag>
 - write a html use: v-html directive (can cause XSS vulnerabilities)
 - bind an attribute use: v-bind directive. eg v-bind:id="someId" or :id="someId"
 - bind many attribute use: v-bind with value is an object
+- bind event: v-on:click="handleFn" or shorthand @click="handleFn"
+- directives: v-if, v-for, v-on, v-slot
+- dynamic attribute or event use :[attribute/event]
+- event modifier: @submit.prevent="handleFn" will call event.preventDefault()
+
+# -------------------------- Reactivity Fundamentals ------------------------- #
