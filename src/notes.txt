@@ -28,3 +28,20 @@
 - event modifier: @submit.prevent="handleFn" will call event.preventDefault()
 
 # -------------------------- Reactivity Fundamentals ------------------------- #
+
+# ---------------------------- Computed Properties --------------------------- #
+- computed properties are cached based on their reactive dependencies
+- it is recommended to use a "computed property" for complex logic that includes reactive data
+- equal to useMemo
+- computed properties can be function that return something or a property with getter (setter is optional)
+
+# ------------------------- Class and Style Bindings ------------------------- #
+- use :class or v-bind:class
+- use object or array for the value
+- if bind class to component, it will be bind to the root element.if multiple root element, use :class="$attrs.class" for element that's received)
+
+# --------------------------- Conditional Rendering -------------------------- #
+- v-if, v-else-if, v-else: can apply to the <template>
+- v-show, v-for
+
+# ------------------------------ List Rendering ------------------------------ #
