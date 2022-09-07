@@ -34,6 +34,7 @@
 - it is recommended to use a "computed property" for complex logic that includes reactive data
 - equal to useMemo
 - computed properties can be function that return something or a property with getter (setter is optional)
+- can wrap function with computed() to make it as computed property
 
 # ------------------------- Class and Style Bindings ------------------------- #
 - use :class or v-bind:class
@@ -41,7 +42,48 @@
 - if bind class to component, it will be bind to the root element.if multiple root element, use :class="$attrs.class" for element that's received)
 
 # --------------------------- Conditional Rendering -------------------------- #
-- v-if, v-else-if, v-else: can apply to the <template>
+- v-if, v-else-if, v-else, v-for: can apply to the <template>
 - v-show, v-for
 
 # ------------------------------ List Rendering ------------------------------ #
+- v-for, :key
+- v-for="(value, key, index) in myObject"
+- v-for="n in 10": 1,2....10
+- v-for="n in even(numbers)"
+- v-if has a higher priority than v-for
+
+# ------------------------------ Event Handling ------------------------------ #
+- v-on:click, @click
+- inline handler, method handler, calling method in inline handler
+- @click="warn($event)"
+- event modifiers: 
+  .stop: stopPropagation();
+  .prevent: .preventDefault();
+  .self: trigger only when event.target is itself
+  .capture: use when adding an event listener to listen event's propagation
+  .once: event only trigger once
+  .passive:
+- key modifiers:
+  .enter: only call when the key is enter
+  .page-down:
+  .tab, .delete (delete & backspace), .esc, .space, .up, .down, .left, .right
+  .ctrl, .alt, shift, .meta (windows key or command key on mac)
+  .exact: only fire when no other keys are pressed
+- @keyup.alt.enter: Alt + Enter, @click.ctrl: Ctrl + Click
+- mouse modifiers:
+  .left, .right, .middle
+
+# ---------------------------- Form Input Bindings --------------------------- #
+- input, textarea: use :value and @input event
+- input type="checkbox | radio": use :checked and @change event
+- select: use :value and @change event
+- v-model for checkbox is an array
+- the value of the inputs can be dynamic by using v-bind
+- true-value, false-value: using with input type="checkbox | radio"
+- :value: can bind non-string value
+- modifiers:
+  .lazy: syncs view after "change" event (by default, it's "input" event)
+  .number: parse input value to number
+  .trim
+  
+# ------------------------------ Lifecycle Hooks ----------------------------- #
