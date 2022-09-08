@@ -3,7 +3,7 @@
 # ---------------------------------------------------------------------------- #
 # -------------------------------- Quick Start ------------------------------- #
 - npm run dev
-- createApp from object or .vue file include: script setup, template, style
+- createApp from object or .vue file include: script, template, style
 - to mount app to the root application id: createApp(MyComponent).mount('#app')
 
 
@@ -85,5 +85,36 @@
   .lazy: syncs view after "change" event (by default, it's "input" event)
   .number: parse input value to number
   .trim
-  
+
 # ------------------------------ Lifecycle Hooks ----------------------------- #
+- mounted, updated, unmounted
+
+# --------------------------------- Watchers --------------------------------- #
+- watch { question(newQuestion, oldQuestion) { }}
+- deep watcher: use when watch property deep in object. option deep: true
+- eager watcher: use when want handler to call immediately (by default, it's lazy). option immediate: true
+- callback flush timing: use when want to access DOM after updated (by default, watchers are called before component update). option flush: 'post'
+- this.$watch('question', (newQuestion) => {
+- stop a watcher: const unwatch = this.$watch('foo', callback); unwatch();
+
+# ------------------------------- Template Refs ------------------------------ #
+- this.$refs.refName
+- ref use with v-for will be an array
+- function refs: :ref="(el) => { /* assign el to a property or ref */ }"
+- ref on child component equal to this of the child component (use when absolutely need)
+- expose: ['publicData', 'publicMethod']: use to limit the access to child component
+
+# ----------------------------- Components Basics ---------------------------- #
+- components: {...}: use to declare components which will use
+- props: [...]: use to defined which props will be received
+- @customEvent="...", $emit('customEvent')
+- emits: [...]: use to declare event will be emitted
+- <slot />: where display children that passed from parent
+- <component :is="currentTab"></component>: dynamic component
+- <my-component></my-component>
+- <table> <tr is="vue:blog-post-row"></tr> </table>
+
+# ---------------------------------------------------------------------------- #
+#                              Components In-Depth                             #
+# ---------------------------------------------------------------------------- #
+# -------------------------- Component Registration -------------------------- #
