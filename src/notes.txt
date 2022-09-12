@@ -100,9 +100,9 @@
 # ------------------------------- Template Refs ------------------------------ #
 - this.$refs.refName
 - ref use with v-for will be an array
-- function refs: :ref="(el) => { /* assign el to a property or ref */ }"
+- dynamic ref: :ref="(el) => { /* assign el to a property or ref */ }". this will be called on each component update
 - ref on child component equal to this of the child component (use when absolutely need)
-- expose: ['publicData', 'publicMethod']: use to limit the access to child component
+- expose: ['publicData', 'publicMethod']: use to limit the access from ref to child component
 
 # ----------------------------- Components Basics ---------------------------- #
 - components: {...}: use to declare components which will use
@@ -120,4 +120,8 @@
 # -------------------------- Component Registration -------------------------- #
 - app.component('ComponentA', ComponentA).component(...): register global component
 - components: { ComponentA }: local Registration
+
+# ----------------------------------- Props ---------------------------------- #
+- props: can be an array or an object (use object when we want to define its type)
 - using kebab-case when passing data to child component
+- static value don't need to use v-bind to pass props

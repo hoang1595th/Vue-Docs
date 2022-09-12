@@ -1,8 +1,9 @@
 <script>
 export default {
+  props:['initCount'],
   data() {
     return {
-      count: 0,
+      count: this.initCount,
       firstName: 'John',
       lastName: 'Doe'
     }
@@ -14,11 +15,11 @@ export default {
   },
   mounted() {
     // methods can be called in lifecycle hooks, or other methods!
-    this.increment();
+    // this.increment();
     this.fullName = "nguyen hoang";
   },
   computed: {
-    publishedBooksMessage() {
+    isEven() {
       return this.count % 2 === 0 ? 'Yes' : 'No'
     },
     fullName: {
@@ -44,13 +45,12 @@ export default {
       {{ count }}
     </div>
     <div>
-      {{ publishedBooksMessage }}
+      {{ isEven }}
     </div>
     <button @click="increment()">increment</button>
     <hr>
     <div>{{ fullName }}</div>
   </div>
-  <FormInputBindings></FormInputBindings>
 </template>
 
 <style scoped>
