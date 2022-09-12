@@ -50,6 +50,7 @@ export default {
     <hr>
     <div>{{ fullName }}</div>
   </div>
+  <FormInputBindings></FormInputBindings>
 </template>
 
 <style scoped>

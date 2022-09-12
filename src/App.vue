@@ -4,7 +4,7 @@ import FormInputBindings from './components/FormInputBindings.vue'
 </script>
 
 <template>
-  <FormInputBindings />
+  <ReactivityFundamentals />
 </template>
 
 <style scoped>

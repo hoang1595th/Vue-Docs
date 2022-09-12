@@ -118,3 +118,6 @@
 #                              Components In-Depth                             #
 # ---------------------------------------------------------------------------- #
 # -------------------------- Component Registration -------------------------- #
+- app.component('ComponentA', ComponentA).component(...): register global component
+- components: { ComponentA }: local Registration
+- using kebab-case when passing data to child component
