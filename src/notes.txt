@@ -122,6 +122,24 @@
 - components: { ComponentA }: local Registration
 
 # ----------------------------------- Props ---------------------------------- #
-- props: can be an array or an object (use object when we want to define its type)
+- props: can be an array or an object (use object when we want to define its type). 
+- multiple type: disabled: [Boolean, Number]
 - using kebab-case when passing data to child component
 - static value don't need to use v-bind to pass props
+- one-way data flow: child component can not update props
+- props validation: propA: {
+  type: [String, Number],
+  default: value or function return default value,
+  required: true,// default is optional
+  validator(value) { return a Boolean value}
+}
+- prop type can be a custom class or constructor function 
+- Boolean casting: absent Boolean prop is false, passing without value is true, 
+- other prop have default value is undefined
+- if prop type is multiple with Boolean inside, Boolean casting will be applied
+
+# ----------------------------- Component Events ----------------------------- #
+- $emit('foo', 1, 2, 3): use to pass data from event to listener
+- emits property can be an object to validate the event payload
+- if a native event (eg click) is defined in the emits option, the listener will only listen to component-emitted click
+- 

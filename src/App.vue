@@ -1,6 +1,5 @@
 <script setup>
-import ReactivityFundamentals from './components/ReactivityFundamentals.vue'
-import FormInputBindings from './components/FormInputBindings.vue'
+import Props from './components/Props.vue'
 </script>
 
 <script>
@@ -14,7 +13,7 @@ export default {
 </script>
 
 <template>
-  <ReactivityFundamentals :init-count="count" />
+  <Props/>
 </template>
 
 <style scoped>
