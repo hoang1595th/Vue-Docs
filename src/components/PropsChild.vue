@@ -1,22 +1,22 @@
-<template>
-  <div class="item">
-    {{ this.initAge }}
-  </div>
-</template>
-
-<style scoped>
-</style>
-
 <script>
   export default {
-    data() {
-      return {
-        initAge: 1
+    props: {
+      modelValue: String,
+      modelModifiers: {
+        default: () => ({})
       }
     },
-    updated() {
-      console.log("child update")
+    emits: ['update:modelValue'],
+    created() {
+      console.log(this.modelModifiers) // { capitalize: true }
     }
   }
-  
   </script>
+  
+  <template>
+    <input
+      type="number"
+      :value="modelValue"
+      @input="$emit('update:modelValue', $event.target.value)"
+    />
+  </template>

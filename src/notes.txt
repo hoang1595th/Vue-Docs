@@ -142,4 +142,9 @@
 - $emit('foo', 1, 2, 3): use to pass data from event to listener
 - emits property can be an object to validate the event payload
 - if a native event (eg click) is defined in the emits option, the listener will only listen to component-emitted click
-- 
+- v-model with custom component: 
+  - default prop in custom component: modelValue
+  - $emit('update:propName', value) by @input or computed value (in setter)
+  - can bind multiple v-model
+  - can use modifiers: .trim, .number, .lazy
+  - modifier will be provided to modelModifiers prop

@@ -1,6 +1,7 @@
 <template>
   <div class="item">
-    <PropsChild :initAge="this.age"></PropsChild>
+    <div>{{ age }}</div>
+    <PropsChild v-model.capitalize="age"></PropsChild>
     <button @click="this.increment()">age increase</button>
   </div>
 </template>
