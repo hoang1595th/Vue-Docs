@@ -139,6 +139,7 @@
 - if prop type is multiple with Boolean inside, Boolean casting will be applied
 
 # ----------------------------- Component Events ----------------------------- #
+- use kebab-case for listener: e.g @event-name
 - $emit('foo', 1, 2, 3): use to pass data from event to listener
 - emits property can be an object to validate the event payload
 - if a native event (eg click) is defined in the emits option, the listener will only listen to component-emitted click
@@ -148,3 +149,17 @@
   - can bind multiple v-model
   - can use modifiers: .trim, .number, .lazy
   - modifier will be provided to modelModifiers prop
+
+# -------------------------- Fallthrough Attributes -------------------------- #
+- when add class/style/id/v-on to child component, if the root element of child component already have, they will be merged together
+- inheritAttrs: false, to disable attribute inheritance
+- $attrs use to access to inherit attribute when set inheritAttrs is false
+  - $attrs['foo-bar']: to access attribute foo-bar
+  - $attrs.onClick: to access event @click
+  - v-bind="$attrs": to bind attributes to target element
+
+# ----------------------------------- Slots ---------------------------------- #
+- <slot>fallback content</slot>: use to display fallback content when parent doesn't provide content
+- <slot></slot> === <slot name="default"></slot>
+- <template v-slot:header>content</template> or <template #header>content</template>: to pass multiple slot
+- <template #[dynamicSlotName]>: use for dynamic slot
