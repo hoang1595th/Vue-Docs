@@ -160,6 +160,13 @@
 
 # ----------------------------------- Slots ---------------------------------- #
 - <slot>fallback content</slot>: use to display fallback content when parent doesn't provide content
-- <slot></slot> === <slot name="default"></slot>
-- <template v-slot:header>content</template> or <template #header>content</template>: to pass multiple slot
-- <template #[dynamicSlotName]>: use for dynamic slot
+- named slots:
+  - <slot></slot> === <slot name="default"></slot>
+  - <template v-slot:header>content</template> or <template #header>content</template>: to pass multiple slot
+  - <template #[dynamicSlotName]>: use for dynamic slot
+- scoped slots:
+  - <slot :propName></slot>: use to pass prop from child to parent
+  - <Parent><Child #slotProps>{{ slotProps.propName }} </Child></Parent>: use to access prop from child component
+  - <Child #{propName}>{{ propName }}</Child>: destructure slotProps
+  - <template #header="headerProps">{{ headerProps }}</template>
+- 
